@@ -141,6 +141,179 @@ public class Practice {
 
         System.out.println(wordBox1.compareTo(wordBox2));                       // 1 or -4 (if adios is commented out)
 
+        // For Quiz:
+        BagInterface<String> wordBag = new ArrayBag<>();
+
+//        wordBag.add("apple");
+//        wordBag.add("banana");
+//        wordBag.add("dog");
+//        wordBag.add("cat");
+//        System.out.println(wordBag.getCurrentSize());
+
+//        wordBag.add("apple");
+//        wordBag.add("banana");
+//        wordBag.add("apple");
+//        wordBag.add("cat");
+//        wordBag.remove("apple");
+//        System.out.println(wordBag.getCurrentSize());
+
+//        wordBag.add("apple");
+//        wordBag.add("frog");
+//        wordBag.add("banana");
+//        wordBag.add("frog");
+//        wordBag.add("elephant");
+//        System.out.println(wordBag.getFrequencyOf("frog"));
+
+//        wordBag.add("apple");
+//        wordBag.add("dog");
+//        wordBag.add("cat");
+//        wordBag.add("banana");
+//        System.out.println(wordBag.contains("cat"));
+
+//        wordBag.add("apple");
+//        wordBag.add("frog");
+//        wordBag.add("banana");
+//        wordBag.add("frog");
+//        wordBag.add("elephant");
+//        System.out.println(wordBag.getFrequencyOf("giraffe"));
+
+//        wordBag.add("apple");
+//        wordBag.add("dog");
+//        wordBag.add("cat");
+//        wordBag.add("banana");
+//        System.out.println(wordBag.remove());
+
+//        wordBag.add("apple");
+//        wordBag.add("banana");
+//        wordBag.add("cat");
+//        wordBag.add("frog");
+//        System.out.println(wordBag.remove("banana"));
+
+//        wordBag.add("apple");
+//        wordBag.add("banana");
+//        wordBag.add("cat");
+//        wordBag.add("frog");
+//        System.out.println(wordBag.remove("melon"));
+
+//        wordBag.add("apple");
+//        wordBag.add("banana");
+//        wordBag.clear();
+//        System.out.println(wordBag.remove());
+
+        wordBag.add("bird");
+        wordBag.add("tree");
+        wordBag.add("bird");
+        while (wordBag.contains("bird")) {
+            wordBag.remove("bird");
+        }
+
+//        wordBag.add("bird");
+//        wordBag.add("tree");
+//        wordBag.add("dog");
+//        while(!wordBag.isEmpty()) {
+//            wordBag.remove("cat");
+//        }
+
+        ListInterface<String> wordListx = new AList<>();
+
+//        wordListx.add("apple");
+//        wordListx.add("banana");
+//        wordListx.add("cat");
+//        wordListx.add(2, "dog");
+//        System.out.println(wordListx.getLength());
+
+//        wordListx.add("adriana");
+//        wordListx.add("bob");
+//        wordListx.add("frank");
+//        wordListx.add("edna");
+//        System.out.println(wordListx.getEntry(2));
+
+//        wordListx.add("apple");
+//        wordListx.add("banana");
+//        wordListx.add("cat");
+//        wordListx.add(2, "dog");
+//        System.out.println(wordListx.getEntry(3));
+
+//        wordListx.add("adriana");
+//        wordListx.add("bob");
+//        wordListx.add("frank");
+//        wordListx.add("edna");
+//        System.out.println(wordListx.getEntry(0));
+
+//        wordListx.add("house");
+//        wordListx.add("yard");
+//        wordListx.add("car");
+//        wordListx.add("street");
+//        System.out.println(wordListx.remove(2));
+
+//        wordListx.add("house");
+//        wordListx.add("yard");
+//        wordListx.add("car");
+//        wordListx.add("street");
+//        System.out.println(wordListx.remove(5));
+
+//        wordListx.add("car");
+//        wordListx.add("boat");
+//        wordListx.add("plane");
+//        wordListx.add("car");
+//        wordListx.add("bike");
+//        wordListx.remove(2);
+//        System.out.println(wordListx.getLength());
+
+//        wordListx.add("car");
+//        wordListx.add("boat");
+//        wordListx.add("plane");
+//        System.out.println(wordListx.replace(2, "train"));
+
+//        wordListx.add("car");
+//        wordListx.add("boat");
+//        wordListx.add("plane");
+//        System.out.println(wordListx.replace(4, "train"));
+
+//        wordListx.add("sun");
+//        wordListx.add("tree");
+//        wordListx.add("bird");
+//        wordListx.add("ocean");
+//        System.out.println(wordListx.contains("bird"));
+
+//        wordListx.add("sun");
+//        wordListx.add("tree");
+//        wordListx.add("bird");
+//        wordListx.add("ocean");
+//        System.out.println(wordListx.contains("snow"));
+
+//        wordListx.add("car");
+//        wordListx.add("boat");
+//        wordListx.add("plane");
+//        wordListx.clear();
+//        System.out.println(wordListx.isEmpty());
+
+//        wordListx.add("sun");
+//        wordListx.add("tree");
+//        wordListx.add("bird");
+//        wordListx.add("ocean");
+//        for(int i=0; i<wordListx.getLength(); i++) {
+//            System.out.println(wordListx.getEntry(i));
+//        }
+
+//        wordListx.add("sun");
+//        wordListx.add("tree");
+//        wordListx.add("bird");
+//        wordListx.add("ocean");
+//        for(String word : wordListx) {
+//            System.out.println(word);
+//        }
+
+        wordListx.add("apple");
+        wordListx.add("banana");
+        wordListx.add("carrot");
+//        ... more adds (not shown)
+        wordListx.add("watermelon");
+        for(int i=1; i<=wordListx.getLength(); i++) {
+            wordListx.remove(i);
+        }
+        System.out.println(wordListx.getLength());
+
     }
 
     // For Practice Question 4:
