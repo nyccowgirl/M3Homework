@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 public class Practice {
 
@@ -33,8 +34,8 @@ public class Practice {
         System.out.println(statesBag.getFrequencyOf("hawaii"));     // 0
 
         System.out.println(statesBag.remove());                             // delaware; however there were 6 items left
-                                                                            // with 3 delaware, 1 georgia, 1 alaska and
-                                                                            // 1 iowa so remove is random
+        // with 3 delaware, 1 georgia, 1 alaska and
+        // 1 iowa so remove is random
 
         // For Practice Question 5:
         System.out.println(getFrequencyOf(statesBag, "delaware"));  // 2
@@ -68,8 +69,17 @@ public class Practice {
         System.out.println(fruitVegListInterface.replace(2, "ginger")); // fig
         System.out.println(fruitVegListInterface.getEntry(2));  // ginger
         System.out.println(fruitVegListInterface.getEntry(3));  // honeydew
-        fruitVegListInterface.clear();
-        System.out.println(fruitVegListInterface.getLength());              // 0
+
+        // For Practice Question 7:
+        System.out.println(getFrequencyOf(fruitVegListInterface, "kale"));  // 1
+
+//        fruitVegListInterface.clear();
+//        System.out.println(fruitVegListInterface.getLength());              // 0
+
+        // For Practice Question 6:
+        System.out.println("before clear: " + fruitVegListInterface.isEmpty()); // before clear: false
+        clear(fruitVegListInterface);
+        System.out.println("after clear: " + fruitVegListInterface.isEmpty());  // after clear: true
 
         // For Practice Question 3:
         List<String> wordList = new ArrayList<>();
@@ -97,9 +107,39 @@ public class Practice {
         System.out.println(wordList.get(2));                                // enter
         System.out.println(wordList.get(3));                                // angle
         System.out.println(wordList.get(1));                                // thread
+
+        // For Practice Question 8:
+        System.out.println(getFrequencyOf(wordList, "thread")); // 1
+
         wordList.clear();
         System.out.println(wordList.size());                                // 0
 
+        // For Practice Question 11:
+        Computer[] compArray = new Computer[5];
+
+        compArray[0] = new Computer("Apple", 256);
+        compArray[1] = new Computer("HP", 512);
+        compArray[2] = new Computer("Dell", 256);
+        compArray[3] = new Computer("Toshiba", 512);
+        compArray[4] = new Computer("Toshiba");
+
+        System.out.println(Arrays.toString(compArray));
+        // [Name: Apple	Memory Size: 256, Name: HP	Memory Size: 512, Name: Dell	Memory Size: 256,
+        // Name: Toshiba	Memory Size: 512, Name: Toshiba	Memory Size: 128]
+        Arrays.sort(compArray);
+        System.out.println(Arrays.toString(compArray));
+        // [Name: Apple	Memory Size: 256, Name: Dell	Memory Size: 256, Name: HP	Memory Size: 512,
+        // Name: Toshiba	Memory Size: 128, Name: Toshiba	Memory Size: 512]
+
+        // For Practice Question 12:
+        Box<String> wordBox1 = new Box<String>("hello");
+//        wordBox1.replaceContents("adios");
+        wordBox1.replaceContents("bye");
+
+        Box<String> wordBox2 = new Box<String>("hi");
+        wordBox2.replaceContents("bye");
+
+        System.out.println(wordBox1.compareTo(wordBox2));                       // 1 or -4 (if adios is commented out)
 
     }
 
@@ -118,7 +158,7 @@ public class Practice {
         while (!wordBag.isEmpty()) {
             String word = wordBag.remove();
 
-            if(word.equals(targetWord)) {
+            if (word.equals(targetWord)) {
                 count++;
             }
 
@@ -131,5 +171,44 @@ public class Practice {
 
         return count;
     }
+
+    // For Practice Question 6:
+    public static void clear(ListInterface<String> wordList) {
+        while (!wordList.isEmpty()) {
+            wordList.remove(1);
+        }
+    }
+
+    // For Practice Question 7:
+    public static int getFrequencyOf(ListInterface<String> wordList, String targetWord) {
+        int count = 0;
+
+        for (int i = 1; i <= wordList.getLength(); i++) {
+            if (wordList.getEntry(i).equals(targetWord)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    // For Practice Question 8:
+    public static int getFrequencyOf(List<String> wordList, String tartgetWord) {
+        int count = 0;
+
+        for (String word : wordList) {
+            if (word.equals(tartgetWord)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
 }
 
+/*
+Practice Question 9: similarity - collection of data; difference - bags are unorganized while lists are arganized
+
+Practice Question 10: similarity - organized; difference - starting position is 1 (ListInterface) and 0 (List)
+ */
