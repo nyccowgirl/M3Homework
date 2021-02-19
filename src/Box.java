@@ -88,7 +88,11 @@ public class Box<T extends Comparable<? super T>> implements Comparable<Box<T>>{
 			} else if (this.history.size() > other.history.size()) {
 				return 1;
 			} else { // same number of replacements
-				return this.history.get(0).compareTo(other.history.get(0)); // compare first item in history
+				if (this.history.isEmpty()) {
+					return 0;
+				} else {
+					return this.history.get(0).compareTo(other.history.get(0)); // compare first item in history
+				}
 			}
 		} else {
 			return thingComparison;

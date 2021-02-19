@@ -136,10 +136,12 @@ public class Practice {
 //        wordBox1.replaceContents("adios");
         wordBox1.replaceContents("bye");
 
-        Box<String> wordBox2 = new Box<String>("hi");
+        Box<String> wordBox2 = new Box<String>("hello");
         wordBox2.replaceContents("bye");
 
         System.out.println(wordBox1.compareTo(wordBox2));                       // 1 or -4 (if adios is commented out)
+                                                                                // 0 if no replacements and nothing is
+                                                                                // added to history in constructor
 
         // For Quiz:
         BagInterface<String> wordBag = new ArrayBag<>();
