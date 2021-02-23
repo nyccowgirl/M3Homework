@@ -140,10 +140,20 @@ public class HomeworkM3Driver {
 	public static int lastPosition(List<String> wordList, String targetWord) {
 		int lastIndex = -1;
 
-		for (int i = 0; i < wordList.size(); i++) {
-			if (wordList.get(i).equals(targetWord)) {
-				lastIndex = i;
+//		for (int i = 0; i < wordList.size(); i++) {
+//			if (wordList.get(i).equals(targetWord)) {
+//				lastIndex = i;
+//			}
+//		}
+
+		// Start from last position
+		int index = wordList.size() - 1;
+
+		while (lastIndex < 0 && index >= 0) {
+			if (wordList.get(index).equals(targetWord)) {
+				lastIndex = index;
 			}
+			index--;
 		}
 
 		return lastIndex;
